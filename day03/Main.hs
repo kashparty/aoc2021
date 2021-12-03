@@ -14,8 +14,8 @@ binToInt []
 binToInt (x : xs)
   = x + 2 * binToInt xs
 
-dayOne :: [[Int]] -> Int
-dayOne nums
+partOne :: [[Int]] -> Int
+partOne nums
   = gammaNum * epsilonNum
   where
     n = length nums
@@ -26,8 +26,8 @@ dayOne nums
     gammaNum = binToInt $ reverse gamma
     epsilonNum = binToInt $ reverse epsilon
 
-dayTwo :: [[Int]] -> Int
-dayTwo nums
+partTwo :: [[Int]] -> Int
+partTwo nums
   = oxygenNum * co2Num
   where
     (oxygen : _) = filterOxygen nums
@@ -66,4 +66,4 @@ main :: IO ()
 main
   = do
       nums <- getInput "input.txt"
-      print $ dayTwo nums
+      print $ partTwo nums
