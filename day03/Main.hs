@@ -66,4 +66,5 @@ main :: IO ()
 main
   = do
       nums <- getInput "input.txt"
+      print $ partOne nums
       print $ partTwo nums

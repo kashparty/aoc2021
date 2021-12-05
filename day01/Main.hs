@@ -22,5 +22,5 @@ main :: IO()
 main
   = do
       nums <- getInput "input.txt"
-      let ans = partTwo nums
-      print ans
+      print $ partOne nums
+      print $ partTwo nums 

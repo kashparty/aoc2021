@@ -1,6 +1,5 @@
 import Data.List
 import Data.Text (splitOn, pack, unpack)
-import Debug.Trace
 
 type Board = [[(Int, Bool)]]
 
@@ -30,7 +29,7 @@ updateBoard n board
 
 score :: Board -> Int -> Int
 score board n
-  = trace (show (n, sumUnmarked)) n * sumUnmarked
+  = n * sumUnmarked
   where
     sumUnmarked = sum [sum [if m then 0 else x | (x, m) <- row] | row <- board]
 
@@ -59,4 +58,5 @@ main :: IO ()
 main
   = do
       (nums, boards) <- getInput "input.txt"
+      print $ partOne nums boards
       print $ partTwo nums boards

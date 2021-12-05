@@ -1,5 +1,3 @@
-import Debug.Trace
-
 data Command = Forward Int | Down Int | Up Int
 
 getInput :: String -> IO [Command]
@@ -54,5 +52,7 @@ main :: IO ()
 main
   = do
       cmds <- getInput "input.txt"
+      let (x, y) = partOne cmds
+      print (x * y)
       let (x, y, _) = partTwo $ reverse cmds
       print (x * y)
