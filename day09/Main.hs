@@ -1,5 +1,4 @@
 import Data.Char
-import Debug.Trace
 import Data.List
 
 getInput :: String -> IO [[Int]]
