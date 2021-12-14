@@ -40,7 +40,7 @@ partOne template rules
         insertChar t (Just c)
           = [t, c]
 
-merge :: Eq a => Ord a => [(a, Int)] -> [(a, Int)]
+merge :: (Eq a, Ord a) => [(a, Int)] -> [(a, Int)]
 merge before
   = map (\ps@((a, _) : _) -> (a, sum $ map snd ps)) groups 
   where
